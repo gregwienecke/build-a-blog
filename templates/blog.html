@@ -4,8 +4,8 @@
 
 	{% for entry in entries %}
 		<div>
-			<div><h3>{{entry.title}}</h3></div>
-			<div><p>{{entry.body}}</p></div>
+			<div><a href="blog/{{entry.key().id()}}"><h3>{{entry.title}}</h3></a></div>
+			<div><p class="entry view">{{entry.body}}</p></div>
 		</div>
 	{% endfor %}
 

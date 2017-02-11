@@ -46,13 +46,23 @@ class NewPostHandler(Handler):
 			e = Entry(title=title, body=body)
 			e.put() #put() method stores the object in the database
 
-			self.redirect("/blog")
+			#self.redirect("/blog")
+			self.redirect("/blog/" + str(e.key().id()) )
 		else:
 			error = "We need both a title and a blog post!"
 			self.render_form(title, body, error)
 
+class ViewPostHandler(Handler):
+	def get(self, id):
+		id = int(id)
+		entry = Entry.get_by_id(id)
+		title = entry.title
+		body = entry.body
+		self.render('viewpost.html', title=title, body=body)
+
 
 app = webapp2.WSGIApplication([
     ('/blog', BlogHandler),
-    ('/newpost', NewPostHandler)
+    ('/newpost', NewPostHandler),
+    (webapp2.Route('/blog/<id:\d+>', ViewPostHandler))
 ], debug=True)
