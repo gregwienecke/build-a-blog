@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>build-a-blog</title>
+		<title></title>
 		<style type="text/css">
 			.error {
 				color: red;
@@ -22,26 +22,43 @@
 				padding: 10px 10px 10px 10px;
 			}
 
+			p {
+				font-family: sans-serif;
+			}
+
 			body {
 				padding-left: 100px;
 			}
 
+			#nav {
+				height: 25px;
+				padding-top: 10px;
+				width: 190px;
+			}
+
 			#nav li {
 				display: inline;
-				margin-right: 10px;
+				margin-right: 14px;
 				font-family: Helvetica;
 			}
 
 			#nav a {
 				text-decoration: none;
+				color: blue;
+				font-size: 20px;
 			}
+
+			#nav a:hover {
+				color: dodgerblue;
+			}
+
 		</style>
 	</head>
 
 	<body>
 		<ul id="nav">
 			<li><a href="/blog">Blog</a></li>
-			<li><a href="newpost">New Post</a></li>
+			<li><a href="/newpost">New Post</a></li>
 		</ul>
 		<h1>Build-A-Blog</h1>
 
