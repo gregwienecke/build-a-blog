@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>build-a-blog</title>
+		<style type="text/css">
+			.error {
+				color: red;
+				font-family: courier;
+			}
+
+			textarea {
+				width: 500px;
+				height: 250px;
+			}
+
+			h1 {
+				font-family: Helvetica;
+				background-color: #000;
+				color: #fff;
+				width: 210px;
+				height: 40px;
+				padding: 10px 10px 10px 10px;
+			}
+
+			body {
+				padding-left: 100px;
+			}
+
+			#nav li {
+				display: inline;
+				margin-right: 10px;
+				font-family: Helvetica;
+			}
+
+			#nav a {
+				text-decoration: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<ul id="nav">
+			<li><a href="/blog">Blog</a></li>
+			<li><a href="newpost">New Post</a></li>
+		</ul>
+		<h1>Build-A-Blog</h1>
+
+		{% block content %}
+		{% endblock %}
+	
+	</body>
+</html>
