@@ -22,8 +22,12 @@
 				padding: 10px 10px 10px 10px;
 			}
 
+			h2 {
+				font-family: Titillium Web;
+			}
+
 			h3 {
-				font-family: sans-serif;
+				font-family: Titillium Web;
 				font-size: 26px;
 				color: dodgerblue;
 			}
@@ -36,33 +40,48 @@
 				font-family: sans-serif;
 			}
 
-			body {
+			#main {
 				padding-left: 100px;
+				padding-bottom: 50px;
 			}
 
 			a {
 				text-decoration: none;
 			}
 
-			#nav {
+			input[type=submit]{
+				background-color: dodgerblue;
+				border: none;
+				font-family: Titillium Web;
+				color: white;
+				width: 100px;
+				height: 30px;
+				cursor: pointer;
+			}
+
+			input[type=submit]:hover {
+				background-color: blue;
+			}
+
+			.nav {
 				height: 25px;
 				padding-top: 10px;
 				width: 190px;
 			}
 
-			#nav li {
+			.nav li {
 				display: inline;
 				margin-right: 14px;
-				font-family: Helvetica;
+				font-family: Titillium Web;
 			}
 
-			#nav a {
+			.nav a {
 				text-decoration: none;
 				color: dodgerblue;
 				font-size: 20px;
 			}
 
-			#nav a:hover {
+			.nav a:hover {
 				color: blue;
 			}
 
@@ -80,17 +99,23 @@
 			}
 
 		</style>
+		<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
 	</head>
 
 	<body>
-		<ul id="nav">
-			<li><a href="/blog">Home</a></li>
-			<li><a href="/newpost">New Post</a></li>
-		</ul>
-		<h1>Build-A-Blog</h1>
+		<div id="main">
+		<header>
+			<ul class="nav">
+				<li><a href="/blog">Home</a></li>
+				<li><a href="/newpost">New Post</a></li>
+			</ul>
+		</header>
+			<h1>Build-A-Blog</h1>
 
-		{% block content %}
-		{% endblock %}
-	
+			{% block content %}
+			{% endblock %}
+		
+		</div>
+
 	</body>
 </html>
